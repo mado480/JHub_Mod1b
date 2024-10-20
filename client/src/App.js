@@ -1,15 +1,18 @@
 import React from "react";
 import logo from './logo.svg';
 import './App.css';
+import { useState } from "react";
 
 function App() {
-  const [data, setData] = React.useState(null);
+  const [data, setData] = useState();
 
   React.useEffect(() => {
-    fetch("http://environment.data.gov.uk/flood-monitoring/id/floods")
+    fetch("/id/floods")
       .then((res) => res.json())
       .then((data) => setData(data.message));
   }, []);
+  
+  console.log("This is line 14 App.js", {data} )
 
   return (
     <div className="App">
