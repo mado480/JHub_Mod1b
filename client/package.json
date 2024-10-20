@@ -17,7 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3001",
+  "proxy": "http://environment.data.gov.uk/flood-monitoring",
   "eslintConfig": {
     "extends": [
       "react-app",
