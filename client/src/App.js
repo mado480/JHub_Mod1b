@@ -1,18 +1,17 @@
 import React from "react";
 import logo from './logo.svg';
 import './App.css';
-import { useState } from "react";
 
 function App() {
-  const [data, setData] = useState();
+  const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
-    fetch("/id/floods")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
+    fetch("/id/stations/1029TH")
+    .then((res) => res.json())
+    .then((data) => setData(data.items.long))
+  })
+
   
-  console.log("This is line 14 App.js", {data} )
 
   return (
     <div className="App">
